@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A1B5325-16DD-4E3B-98CD-CA2330E0E843}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zrchiptuning</RootNamespace>
+    <AssemblyName>zrchiptuning</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\splastv2\splastv2\bin\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Users\dejan\Downloads\HtmlAgilityPack.1.4.6\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="administrator\css\plugins\dataTables.bootstrap.css" />
+    <Content Include="administrator\css\plugins\metisMenu\metisMenu.css" />
+    <Content Include="administrator\css\plugins\metisMenu\metisMenu.min.css" />
+    <Content Include="administrator\css\plugins\morris.css" />
+    <Content Include="administrator\css\plugins\social-buttons.css" />
+    <Content Include="administrator\css\plugins\timeline.css" />
+    <Content Include="administrator\css\style.css" />
+    <Content Include="administrator\customPage.aspx" />
+    <Content Include="administrator\customPages.aspx" />
+    <Content Include="administrator\default.aspx" />
+    <Content Include="administrator\loadData.aspx" />
+    <Content Include="administrator\login.aspx" />
+    <Content Include="customPage.aspx" />
+    <Content Include="Default3.aspx" />
+    <Content Include="engine.aspx" />
+    <Content Include="engines.aspx" />
+    <Content Include="error.html" />
+    <Content Include="errors\not-found.html" />
+    <Content Include="Global.asax" />
+    <Content Include="js\contactForm.js" />
+    <Content Include="js\map.js" />
+    <Content Include="js\zrchiptuning.js" />
+    <Content Include="manufacturers.aspx" />
+    <Content Include="models.aspx" />
+    <Content Include="spNames.xml" />
+    <Content Include="userControls\Slider.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="administrator\administrator.Master.cs">
+      <DependentUpon>administrator.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrator\administrator.Master.designer.cs">
+      <DependentUpon>administrator.Master</DependentUpon>
+    </Compile>
+    <Compile Include="administrator\customPage.aspx.cs">
+      <DependentUpon>customPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrator\customPage.aspx.designer.cs">
+      <DependentUpon>customPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrator\customPages.aspx.cs">
+      <DependentUpon>customPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrator\customPages.aspx.designer.cs">
+      <DependentUpon>customPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrator\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrator\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrator\loadData.aspx.cs">
+      <DependentUpon>loadData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrator\loadData.aspx.designer.cs">
+      <DependentUpon>loadData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrator\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrator\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrator\uploadImage.ashx.cs">
+      <DependentUpon>uploadImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="customPage.aspx.cs">
+      <DependentUpon>customPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customPage.aspx.designer.cs">
+      <DependentUpon>customPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default3.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default3.aspx.designer.cs">
+      <DependentUpon>Default3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="engine.aspx.cs">
+      <DependentUpon>engine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="engine.aspx.designer.cs">
+      <DependentUpon>engine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="engines.aspx.cs">
+      <DependentUpon>engines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="engines.aspx.designer.cs">
+      <DependentUpon>engines.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="manufacturers.aspx.cs">
+      <DependentUpon>manufacturers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manufacturers.aspx.designer.cs">
+      <DependentUpon>manufacturers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="models.aspx.cs">
+      <DependentUpon>models.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="models.aspx.designer.cs">
+      <DependentUpon>models.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userControls\Slider.ascx.cs">
+      <DependentUpon>Slider.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userControls\Slider.ascx.designer.cs">
+      <DependentUpon>Slider.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebMethods.aspx.cs">
+      <DependentUpon>WebMethods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebMethods.aspx.designer.cs">
+      <DependentUpon>WebMethods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="zrchiptuning.Master.cs">
+      <DependentUpon>zrchiptuning.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="zrchiptuning.Master.designer.cs">
+      <DependentUpon>zrchiptuning.Master</DependentUpon>
+    </Compile>
+    <Compile Include="zrchiptuningV2.Master.cs">
+      <DependentUpon>zrchiptuningV2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="zrchiptuningV2.Master.designer.cs">
+      <DependentUpon>zrchiptuningV2.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\camera.css" />
+    <Content Include="css\jquery.lightbox-0.5.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\styleV2.css" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\camera.js" />
+    <Content Include="js\camera.min.js" />
+    <Content Include="js\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.lightbox-0.5.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.mobile.customized.min.js" />
+    <Content Include="js\product.js" />
+    <Content Include="WebMethods.aspx" />
+    <Content Include="zrchiptuning.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\styleV3.css" />
+    <Content Include="default.aspx" />
+    <Content Include="zrchiptuningV2.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="administrator\font-awesome-4.1.0\" />
+    <Folder Include="administrator\js\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{5ab1d0e3-1b15-4db1-a678-812f2629ed75}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{b7424f19-82ad-47fd-b3d4-1ea9d56f6fa7}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{6f8a1c33-e8f0-410e-8e71-1482d893867c}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="administrator\administrator.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="administrator\uploadImage.ashx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50872</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
