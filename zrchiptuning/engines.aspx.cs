@@ -32,7 +32,7 @@ namespace zrchiptuning
             { 
                 lblModel.Text = model.Manufacturer.Name + " " + model.Name;
                 showModels(model.Manufacturer);
-            
+                Page.Title = model.Manufacturer.Name + " " + model.Name + " | Chip tuning poslednje generacije";
 
             //rptEngines.DataSource = model.Engines;
             //rptEngines.DataBind();

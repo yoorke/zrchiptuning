@@ -73,6 +73,7 @@ namespace zrchiptuning
             routes.MapPageRoute("iskljucivanjeOgranicenaBrzine", "iskljucivanje-ogranicenja-brzine", "~/customPage.aspx", false, new RouteValueDictionary { { "url", "iskljucivanje-ogranicenja-brzine" } });
 
             routes.MapPageRoute("povecanjeSnage", "chip-tuning/{url}", "~/customPage.aspx");
+            routes.MapPageRoute("dynoPowerTest", "dyno-test", "~/customPage.aspx", false, new RouteValueDictionary { { "url", "dyno-test" } });
         }
     }
 }

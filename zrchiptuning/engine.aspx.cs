@@ -52,8 +52,11 @@ namespace zrchiptuning
                 Server.Transfer("~/error/not-found.html");
             }
 
-            if(engine != null)
-                lblEngine.Text = model.Name + " " + engine.Name;
+            if (engine != null)
+            {
+                lblEngine.Text = model.Manufacturer.Name + " " + model.Name + " " + engine.Name;
+                Page.Title = model.Manufacturer.Name + " " + model.Name + " " + engine.Name + " Chip tuning";
+            }
             else
             {
                 Response.StatusCode = 404;

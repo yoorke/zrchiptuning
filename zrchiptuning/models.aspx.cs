@@ -38,8 +38,11 @@ namespace zrchiptuning
             rptModels.DataBind();
 
             Manufacturer manufacturer = new ManufacturerBL().GetManufacturer(manufacturerUrl);
-            if(manufacturer != null)
+            if (manufacturer != null)
+            {
                 lblManufacturer.Text = new ManufacturerBL().GetManufacturer(manufacturerUrl).Name;
+                Page.Title = manufacturer.Name + " | Chip tuning poslednje generacije";
+            }
             else
             {
                 Response.StatusCode = 404;

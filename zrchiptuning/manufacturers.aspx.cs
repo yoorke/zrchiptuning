@@ -25,8 +25,11 @@ namespace zrchiptuning
             rptManufacturers.DataBind();
 
             BE.Type type = new TypeBL().GetTypeByUrl(typeUrl);
-            if(type != null)
+            if (type != null)
+            {
                 lblTypeName.Text = type.Name;
+                Page.Title = type.Name + " | Chip tuning poslednje generacije";
+            }
             else
             {
                 Response.StatusCode = 404;

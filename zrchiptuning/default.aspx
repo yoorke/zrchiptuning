@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/zrchiptuningV2.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="zrchiptuning.defaultV2" Title="Zrchiptuning" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/zrchiptuningV2.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="zrchiptuning.defaultV2" Title="Zrchiptuning - Chip tuning poslednje generacije" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -34,6 +34,9 @@
                             <img src="/images/contact.jpg" />
                         </a>
                     <h2>Facebook</h2>
+                    <div class="fb-page" data-href="https://www.facebook.com/CHIP-Tuning-Zrenjanin-1472675699681819" data-width="180" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false">
+                        <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/CHIP-Tuning-Zrenjanin-1472675699681819"><a href="https://www.facebook.com/CHIP-Tuning-1472675699681819">zrchiptuning</a></blockquote></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,10 +121,11 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="fpBox">
-                        <h2 class="box">Projekti</h2>
-                        <div class="soon">
+                        <h2 class="box">Dyno Test</h2>
+                        <img src="/images/dynotest.jpg" class="img-responsive" />
+                        <%--<div class="soon">
                             Uskoro
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
                 <div class="col-sm-6">
