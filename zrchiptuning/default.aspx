@@ -122,7 +122,11 @@
                 <div class="col-sm-6">
                     <div class="fpBox">
                         <h2 class="box">Dyno Test</h2>
-                        <img src="/images/dynotest.jpg" class="img-responsive" />
+                        <a href="/dyno-test">
+                            <img src="/images/dynotest.jpg" class="img-responsive" alt="Dyno test" />
+                        </a>
+                        <p class="desc">ZrChipTuning pruža mogućnost merenja snage vozila na dinamometru (dyno) novije generacije.</p>
+                        <p class="desc">Jedna smo od dve firme u Srbiji koje imaju mogućnost da izmere snagu na vozilima sa <strong>4x4</strong> pogonom.</p>
                         <%--<div class="soon">
                             Uskoro
                         </div>--%>

@@ -396,5 +396,76 @@ namespace BL
                 }
             }
         }
+
+        public void LoadFromAllCarTuning(string modelUrl, int modelID)
+        {
+            WebClient client = new WebClient();
+            string source = client.DownloadString(modelUrl);
+
+            string allCarTuningBaseUrl = "https://allcartuning.com/";
+
+            HtmlDocument html = new HtmlDocument();
+            html.LoadHtml(source);
+
+            Model model = new ModelBL().GetModel(modelID);
+
+            List<HtmlNode> engines = html.DocumentNode.Descendants("a").Where(x => (x.Attributes["href"] != null && x.Attributes["href"].Value.Contains("en/chiptuning-configurator-car/details/"))).ToList();
+
+            foreach(HtmlNode engine in engines)
+            {
+                string engineData = client.DownloadString(allCarTuningBaseUrl + engine.Attributes["href"].Value);
+                HtmlDocument htmlEngine = new HtmlDocument();
+                htmlEngine.LoadHtml(engineData);
+
+                Engine engineModel = new Engine();
+
+                HtmlNode nameString = htmlEngine.DocumentNode.Descendants("span").Where(x => x.Attributes.Count > 0 && x.Attributes["class"] != null && x.Attributes["class"].Value.Equals("modelsHeader")).ToList()[0];
+                string nameValue = nameString.FirstChild.InnerText.Substring(nameString.FirstChild.InnerText.LastIndexOf("&nbsp;")).Remove(0, 6);
+
+                engineModel.Name = nameValue;
+                engineModel.Url = nameValue.ToLower().Replace(' ', '-');
+                engineModel.Capacity = 0;
+                int powerKs = 0;
+                int torq = 0;
+                int powerKw = 0;
+
+                int powerKsTuning = 0;
+                int powerKwTuning = 0;
+                int torqTuning = 0;
+
+                List<HtmlNode> values = htmlEngine.DocumentNode.Descendants("div").Where(x => x.Attributes.Count > 0 && x.Attributes["class"] != null && x.Attributes["class"].Value.Equals("cvalue")).ToList();
+                int.TryParse(values[0].InnerText.Substring(0, values[0].InnerText.IndexOf(' ')), out powerKs);
+                int.TryParse(values[1].InnerText.Substring(0, values[1].InnerText.IndexOf(' ')), out powerKsTuning);
+                powerKw = Convert.ToInt32(powerKs / 1.36);
+
+                int.TryParse(values[2].InnerText.Substring(0, values[2].InnerText.IndexOf(' ')), out torq);
+                int.TryParse(values[3].InnerText.Substring(0, values[3].InnerText.IndexOf(' ')), out torqTuning);
+                powerKwTuning = Convert.ToInt32(powerKsTuning / 1.36);
+
+                engineModel.Fuel = new FuelBL().GetFuel(1);
+                engineModel.KsRpm = 0;
+                engineModel.MaxSpeed = 0;
+                engineModel.PowerKs = powerKs;
+                engineModel.PowerKw = powerKw;
+                engineModel.Torq = torq;
+                engineModel.TorqRpm = 0;
+                engineModel._isActive = true;
+
+                engineModel.ID = new GenericRepository<Engine>().Insert(engineModel);
+
+                EngineStage stage = new EngineStage();
+                stage.EngineID = engineModel.ID;
+                stage.MaxSpeed = 0;
+                stage.PowerKs = powerKsTuning;
+                stage.PowerKsRpm = 0;
+                stage.PowerKw = powerKwTuning;
+                stage.Stage = new StageBL().GetStage(1005);
+                stage.Torq = torqTuning;
+                stage.TorqRpm = 0;
+
+                new GenericRepository<ModelEngine>().Insert(new ModelEngine(model, engineModel, -1));
+                new GenericRepository<EngineStage>().Insert(stage);
+            }
+        }
 	}
 }

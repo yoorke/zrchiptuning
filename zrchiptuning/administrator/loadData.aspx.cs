@@ -45,5 +45,10 @@ namespace zrchiptuning.administrator
                 new ModelBL().LoadDataMcChip(int.Parse(cmbManufacturers.SelectedValue), 1);
             }
         }
+
+        protected void btnLoadFromAllCarTuning_Click(object sender, EventArgs e)
+        {
+            new ModelBL().LoadFromAllCarTuning(txtModelUrl.Text, int.Parse(txtModelID.Text));
+        }
     }
 }
