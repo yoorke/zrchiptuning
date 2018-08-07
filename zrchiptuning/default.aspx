@@ -31,11 +31,11 @@
                     </ul>
                     <h2>Kontakt</h2>
                         <a href="/kontakt">
-                            <img src="/images/contact.jpg" />
+                            <img src="/images/contact.jpg" alt="Contact" />
                         </a>
                     <h2>Facebook</h2>
-                    <div class="fb-page" data-href="https://www.facebook.com/CHIP-Tuning-Zrenjanin-1472675699681819" data-width="180" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false">
-                        <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/CHIP-Tuning-Zrenjanin-1472675699681819"><a href="https://www.facebook.com/CHIP-Tuning-1472675699681819">zrchiptuning</a></blockquote></div>
+                    <div class="fb-page" data-href="https://www.facebook.com/zrchiptuning" data-width="180" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false">
+                        <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/zrchiptuning"><a href="https://www.facebook.com/zrchiptuning">zrchiptuning</a></blockquote></div>
                     </div>
                 </div>
             </div>
